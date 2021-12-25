@@ -1,0 +1,38 @@
+@use '../styles/colors';
+
+.header {
+  background-color: colors.$rich-black;
+  font-family: "Open Sans", serif;
+  text-align: center;
+  padding: 20px 0;
+
+  a, a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  h2 {
+    margin: 0 0.2em;
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+}
