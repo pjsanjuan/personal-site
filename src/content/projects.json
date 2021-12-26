@@ -1,0 +1,16 @@
+[
+  {
+    "title": "first project",
+    "bulletPointItems": [
+      "this is the first bullet point",
+      "this is the second bullet point"
+    ]
+  },
+  {
+    "title": " second project",
+    "bulletPointItems": [
+      "this is the first bullet point",
+      "this is the second bullet point"
+    ]
+  }
+]

@@ -1,19 +1,19 @@
 import * as React from "react"
-import * as aboutStyles from "../../styles/home/hero.module.scss"
+import * as heroStyles from "../../styles/home/hero.module.scss"
 import { StaticImage } from "gatsby-plugin-image"
 
 
 const HeroHome = () => (
-  <section className={aboutStyles.wrapper}>
-    <div className={aboutStyles.main}>
-      <div className={aboutStyles.imageWrapper}>
+  <section className={heroStyles.wrapper}>
+    <div className={heroStyles.main}>
+      <div className={heroStyles.imageWrapper}>
         <StaticImage
           src="../../images/headshot.jpg"
           alt="Profile picture"
           imgStyle={{ borderRadius: '100%' }} />
       </div>
 
-      <div className={aboutStyles.aboutWrapper}>
+      <div className={heroStyles.aboutWrapper}>
         <p>Hi, my name is</p>
         <h2>Patrick San Juan</h2>
         <p>I'm a developer who likes to learn new technologies through projects.

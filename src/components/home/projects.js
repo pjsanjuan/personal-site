@@ -1,13 +1,27 @@
 import * as React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import * as projectStyles from "../../styles/home/projects.module.scss"
+import ProjectData from "../../content/projects.json"
+import ProjectCard from "./project-card"
+
+console.log(ProjectData)
 
 const ProjectsHome = () => (
   <section>
-    <p>This will be the projects home component.</p>
-    {/* TODO: Image of me here */}
-
-    {/* TODO: Description of myself */}
+    <h1>
+      01. Projects
+    </h1>
+    <div className={projectStyles.wrapper}>
+      {
+        ProjectData.map(item => {
+          return <ProjectCard
+            key={item.title}
+            title={item.title}
+            bulletPointItems={item.bulletPointItems}
+            githubLink="https://google.com"
+          />
+        })
+      }
+    </div>
   </section>
 )
 

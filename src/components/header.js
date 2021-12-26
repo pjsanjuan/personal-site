@@ -23,15 +23,15 @@ const Header = ({ siteTitle }) => (
         </h2>
 
         <h2>
-          <Link to="https://github.com/pjsanjuan" target="_blank">
+          <a href="https://github.com/pjsanjuan" target="_blank">
             <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
-          </Link>
+          </a>
         </h2>
 
         <h2>
-          <Link to="https://www.linkedin.com/in/pjsanjuan/" target="_blank">
+          <a href="https://www.linkedin.com/in/pjsanjuan/" target="_blank">
             <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
-          </Link>
+          </a>
         </h2>
       </div>
     </div>
