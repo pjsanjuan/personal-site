@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  // flex-wrap: wrap;
+
+  > div {
+    flex: 0 0 50%;
+  }
+  .imageWrapper {
+    padding: 0 30px;
+  }
+
+  .aboutWrapper {
+    padding: 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

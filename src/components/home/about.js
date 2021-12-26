@@ -1,13 +1,26 @@
 import * as React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import * as aboutStyles from "../../styles/home/about.module.scss"
+import { StaticImage } from "gatsby-plugin-image"
+
 
 const AboutHome = () => (
   <>
-    <p>This will be the about component.</p>
-    {/* TODO: Image of me here */}
+    <div className={aboutStyles.wrapper}>
+      <div className={aboutStyles.imageWrapper}>
+        <StaticImage
+          src="../../images/headshot.jpg"
+          alt="Profile picture"
+          imgStyle={{ borderRadius: '100%'}}/>
+      </div>
 
-    {/* TODO: Description of myself */}
+      <div className={aboutStyles.aboutWrapper}>
+        <p>Hi, my name is</p>
+        <h2>Patrick San Juan</h2>
+        <p>I'm a developer who likes to learn new technologies through projects.
+          I primarily do back end development, but I'm learning front-end web develop when I can to expand my skills.
+          Currently, I'm focused on developing software at FORM.</p>
+      </div>
+    </div>
   </>
 )
 
