@@ -1,13 +1,21 @@
 .wrapper {
   display: flex;
-  justify-content: space-between;
-  // flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 100vh;
+  position: relative;
 
   > div {
     flex: 0 0 50%;
   }
+
   .imageWrapper {
     padding: 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .aboutWrapper {
@@ -17,4 +25,9 @@
     flex-direction: column;
     justify-content: center;
   }
+}
+
+.main {
+  display: flex;
+  margin: 0 auto;
 }
