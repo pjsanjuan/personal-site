@@ -21,9 +21,11 @@ const ProjectCard = ({ title, mdxBody, gatsbyImageData, githubLink, youtubeLink 
   
       <div className={projectStyles.content}>
         <h2>{title}</h2>
-        {/* <MDXRenderer>
+        {
+        <MDXRenderer>
           {mdxBody}
-        </MDXRenderer> */}
+        </MDXRenderer>
+        }
   
         {
           // Render the github icon if the githubLink prop exists
