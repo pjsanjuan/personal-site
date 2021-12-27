@@ -7,12 +7,16 @@ import * as path from "path-browserify"
 
 const projectsQuery = graphql`
   query {
-    allMdx {
+    allMdx(filter: {fileAbsolutePath: {regex: "/projects/"}}) {
       nodes {
+        id
+        body
         frontmatter {
           githubLink
           title
+          youtubeLink
           thumbnailImage {
+            id
             childImageSharp {
               gatsbyImageData
             }
@@ -33,6 +37,19 @@ const ProjectsHome = () => {
         01. Projects
       </h1>
       <div className={projectStyles.wrapper}>
+      {
+        allMdx.nodes.map((node, index) => (
+          <ProjectCard
+            key={index}
+            title={node.frontmatter.title}
+            mdxBody={node.body}
+            githubLink={node.frontmatter.githubLink}
+            youtubeLink={node.frontmatter.youtubeLink}
+            gatsbyImageData={node.frontmatter.thumbnailImage}
+          />
+        ))
+      }
+
         <ul>
         {
           allMdx.nodes.map((node, index) => (
