@@ -6,11 +6,11 @@ import { faGithubSquare, faYoutubeSquare } from "@fortawesome/free-brands-svg-ic
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const ProjectCard = ({ title, mdxBody, gatsbyImageData, technologies, githubLink, youtubeLink }) => {
+const ProjectCard = ({ title, mdxBody, gatsbyImageData, technologies, githubLink, youtubeLink, style }) => {
   const image = getImage(gatsbyImageData)
 
   return (
-    <div className={projectStyles.wrapper}>
+    <div className={projectStyles.wrapper} style={style}>
       <div className={projectStyles.imageWrapper}>
         <GatsbyImage
           image={image}
@@ -46,13 +46,11 @@ const ProjectCard = ({ title, mdxBody, gatsbyImageData, technologies, githubLink
           </div>
 
           
-          <div className={projectStyles.technologies}>
+          <span className={`${projectStyles.technologies} code`}>
           {
-            technologies ? technologies.map(technology => (
-              <span key={technology}>{technology}, </span> 
-            )) : null
+            technologies ? technologies.join(", ") : null
           }
-          </div>
+          </span>
         </div>
       </div>
     </div>

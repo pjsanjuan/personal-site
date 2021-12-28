@@ -36,7 +36,7 @@ const ProjectsHome = () => {
       </h1>
       <div>
       {
-        allMdx.nodes.map((node, index) => (
+        allMdx.nodes.map(node => (
           <ProjectCard
             key={node.frontmatter.title}
             title={node.frontmatter.title}
@@ -45,6 +45,7 @@ const ProjectsHome = () => {
             youtubeLink={node.frontmatter.youtubeLink}
             gatsbyImageData={node.frontmatter.thumbnailImage}
             technologies={node.frontmatter.technologies}
+            style={{ marginBottom: "10px" }}
           />
         ))
       }

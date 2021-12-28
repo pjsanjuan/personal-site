@@ -1,11 +1,14 @@
-@use '../../styles/colors';
+@use "../../styles/colors";
 
 .wrapper {
   display: flex;
-  margin: 30px 0;
+  padding: 30px 10px;
+  background-color: colors.$queen-blue;
+  border-radius: 10px;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   > div {
-    flex: 0 0 50%
+    flex: 0 0 50%;
   }
 }
 
@@ -21,7 +24,7 @@
   justify-content: space-between;
 }
 
-.externalLinks {  
+.externalLinks {
   a {
     text-decoration: none;
     color: white;
@@ -37,15 +40,5 @@
 }
 
 .technologies {
-  span {
-    color: colors.$light-cyan;
-  }
-}
-
-.dot {
-  height: 5px;
-  width: 5px;
-  background-color: colors.$light-cyan;
-  border-radius: 50%;
-  display: inline-block;
+  color: colors.$light-cyan;
 }
