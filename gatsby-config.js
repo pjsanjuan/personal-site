@@ -23,7 +23,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/projects`,
+        path: `${__dirname}/src/content/projects`,
+      },
+    },
+    // Path for all projects
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `resume`,
+        path: `${__dirname}/src/content/resume`,
       },
     },
     `gatsby-transformer-sharp`,

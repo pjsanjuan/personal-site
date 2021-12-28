@@ -2,11 +2,14 @@ import React from 'react'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import WorkExperience from "../components/resume/work-experience"
 
 const Resume = () => (
   <Layout>
     <Seo title="Resume" />
-    <p>This the resume page.</p>
+    {/* TODO: Skills */}
+    
+    <WorkExperience />
   </Layout>
 )
 
