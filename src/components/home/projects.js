@@ -1,9 +1,6 @@
 import * as React from "react"
-import * as projectStyles from "../../styles/home/projects.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
-// import ProjectData from "../../content/projects.json"
 import ProjectCard from "./project-card"
-import * as path from "path-browserify"
 
 const projectsQuery = graphql`
   query {
@@ -15,6 +12,7 @@ const projectsQuery = graphql`
           githubLink
           title
           youtubeLink
+          technologies
           thumbnailImage {
             id
             childImageSharp {
@@ -33,32 +31,23 @@ const ProjectsHome = () => {
 
   return (
     <section>
-      <h1>
+      <h1 className="code">
         01. Projects
       </h1>
-      <div className={projectStyles.wrapper}>
+      <div>
       {
         allMdx.nodes.map((node, index) => (
           <ProjectCard
-            key={index}
+            key={node.frontmatter.title}
             title={node.frontmatter.title}
             mdxBody={node.body}
             githubLink={node.frontmatter.githubLink}
             youtubeLink={node.frontmatter.youtubeLink}
             gatsbyImageData={node.frontmatter.thumbnailImage}
+            technologies={node.frontmatter.technologies}
           />
         ))
       }
-
-        <ul>
-        {
-          allMdx.nodes.map((node, index) => (
-            <li key={index}>
-              {node.frontmatter.title}
-            </li>
-          ))
-        }
-        </ul>
       </div>
     </section>
   )

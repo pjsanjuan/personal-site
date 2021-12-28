@@ -14,8 +14,8 @@ const HeroHome = () => (
       </div>
 
       <div className={heroStyles.aboutWrapper}>
-        <p>Hi, my name is</p>
-        <h2>Patrick San Juan</h2>
+        <p className="code">Hi, my name is</p>
+        <h1>Patrick San Juan</h1>
         <p>I'm a developer who likes to learn new technologies through projects.
           I primarily do back end development, but I'm learning front-end web develop when I can to expand my skills.
           Currently, I'm focused on developing software at FORM.</p>
