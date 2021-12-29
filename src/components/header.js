@@ -14,11 +14,11 @@ const Header = ({ siteTitle }) => (
       </h1>
 
       <div className={headerStyles.tabs}>
-        <h2>
+        <h2 className={headerStyles.underlineAnimate}>
           <Link to="">Projects</Link>
         </h2>
 
-        <h2>
+        <h2 className={headerStyles.underlineAnimate}>
           <Link to="/resume">Resume</Link>
         </h2>
 

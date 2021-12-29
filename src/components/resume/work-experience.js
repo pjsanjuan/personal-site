@@ -33,14 +33,6 @@ const WorkExperience = ({ style }) => {
     <section style={style}>
       <h1>Work Experience</h1>
       <div>
-        {/* {
-         allMdx.nodes.map(node => (
-          <li
-            key={node.frontmatter.position}
-          >{node.frontmatter.position}</li>
-        ))
-      } */}
-
         {
           allMdx.nodes.map(node => (
             <WorkExperienceCard
@@ -51,6 +43,7 @@ const WorkExperience = ({ style }) => {
               startDate={node.frontmatter.startDate}
               endDate={node.frontmatter.endDate}
               mdxBody={node.body}
+              style={{ marginBottom: "60px" }}
             />
           ))
         }

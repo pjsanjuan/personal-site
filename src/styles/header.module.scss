@@ -1,4 +1,6 @@
-@use '../styles/colors';
+@use "../styles/colors";
+
+$aLinkColor: #fff;
 
 .header {
   background-color: colors.$rich-black;
@@ -6,8 +8,9 @@
   text-align: center;
   padding: 20px 0;
 
-  a, a:visited {
-    color: white;
+  a,
+  a:visited {
+    color: $aLinkColor;
     text-decoration: none;
   }
 
@@ -34,5 +37,29 @@
     margin: 0 0.2em;
     font-size: 1.2rem;
     font-weight: normal;
+  }
+}
+
+.underlineAnimate {
+  display: inline-block;
+  position: relative;
+  color: $aLinkColor;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $aLinkColor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 }

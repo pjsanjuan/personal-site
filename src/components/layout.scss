@@ -11,13 +11,13 @@ html {
   font: 112.5%/1.45em georgia, serif, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
-  background-color: colors.$prussian-blue;
+  background-color: colors.$grey-background;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: whitesmoke;
+  color: colors.$rich-black;
   font-family: "Open Sans", georgia, serif;
   font-weight: normal;
   word-wrap: break-word;

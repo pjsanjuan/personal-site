@@ -3,12 +3,17 @@
 .wrapper {
   display: flex;
   padding: 30px 10px;
-  background-color: colors.$queen-blue;
+  background-color: colors.$white-background;
   border-radius: 10px;
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease-in-out;
 
   > div {
     flex: 0 0 50%;
+  }
+
+  &:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   }
 }
 
@@ -31,6 +36,10 @@
     margin: 0 5px;
     font-size: 2rem;
   }
+
+  svg {
+    color: colors.$prussian-blue;
+  }
 }
 
 .footer {
@@ -40,5 +49,5 @@
 }
 
 .technologies {
-  color: colors.$light-cyan;
+  color: colors.$queen-blue;
 }

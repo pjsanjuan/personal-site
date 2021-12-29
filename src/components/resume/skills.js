@@ -1,13 +1,12 @@
-import React from 'react'
+import * as React from "react"
+import * as heroStyles from "../../styles/home/hero.module.scss"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const WorkExperienceCard = () => (
-  <section>
-    <p>This is the work experience section</p>
+const Skills = () => (
+  <section className={heroStyles.wrapper}>
+    <h1>Skills</h1>
+    <p>This will be the skills section.</p>
   </section>
 )
 
-export default WorkExperienceCard
+export default Skills
