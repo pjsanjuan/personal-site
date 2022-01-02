@@ -31,16 +31,20 @@ const WorkExperienceTabs = ({ style }) => {
 
   const [activeNode, setActiveNode] = useState(allMdx.nodes[0]);
 
+  const selectedTabClass = (currentNode) => {
+    return currentNode.frontmatter.position === activeNode.frontmatter.position ? scssStyles.isActive : null
+  }
+
   return (
     <section style={style}>
-      <h1 class="code">02. Where I've worked at</h1>
+      <h1 className="code">02. Where I've worked at</h1>
       <div className={scssStyles.main}>
-        <div class={scssStyles.tabs}>
+        <div className={scssStyles.tabs}>
           <ul>
             {
               allMdx.nodes.map((node) => (
-                <li>
-                  <button onClick={() => setActiveNode(node)}>
+                <li key={node.frontmatter.position}>
+                  <button onClick={() => setActiveNode(node)} className={selectedTabClass(node)}>
                     {node.frontmatter.position}
                   </button>
                 </li>
@@ -48,17 +52,17 @@ const WorkExperienceTabs = ({ style }) => {
             }
           </ul>
         </div>
-        <div class={scssStyles.tabContent}>
+        <div className={scssStyles.tabContent}>
           {
             <WorkExperienceTab
-            key={activeNode.frontmatter.position}
-            position={activeNode.frontmatter.position}
-            company={activeNode.frontmatter.company}
-            location={activeNode.frontmatter.location}
-            startDate={activeNode.frontmatter.startDate}
-            endDate={activeNode.frontmatter.endDate}
-            mdxBody={activeNode.body}
-          />
+              key={activeNode.frontmatter.position}
+              position={activeNode.frontmatter.position}
+              company={activeNode.frontmatter.company}
+              location={activeNode.frontmatter.location}
+              startDate={activeNode.frontmatter.startDate}
+              endDate={activeNode.frontmatter.endDate}
+              mdxBody={activeNode.body}
+            />
           }
         </div>
       </div>

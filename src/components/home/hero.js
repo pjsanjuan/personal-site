@@ -21,15 +21,15 @@ const HeroHome = () => (
           Currently, I'm focused on developing software at <b>FORM</b>.</p>
         <p>
           Lately, I've been working the with following technologies:
-          <ul className={heroStyles.recentSkills}>
-            <li>NodeJs</li>
-            <li>JavaScript/TypeScript</li>
-            <li>SQL</li>
-            <li>AWS</li>
-            <li>React</li>
-            <li>Vue</li>
-          </ul>
         </p>
+        <ul className={heroStyles.recentSkills}>
+          <li>NodeJs</li>
+          <li>JavaScript/TypeScript</li>
+          <li>SQL</li>
+          <li>AWS</li>
+          <li>React</li>
+          <li>Vue</li>
+        </ul>
       </div>
     </div>
   </section>

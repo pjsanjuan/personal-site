@@ -1,9 +1,8 @@
-@use '../../styles/colors';
+@use "../../styles/colors";
 
 $bottom-border-width: 1px;
 $border-bottom-color: #dbdbdb;
 $selected-color: colors.$queen-blue;
-
 
 .tabs {
   display: flex;
@@ -30,7 +29,7 @@ $selected-color: colors.$queen-blue;
     margin: 0;
     padding: 0;
   }
-  
+
   button {
     background: none;
     color: inherit;
@@ -44,8 +43,8 @@ $selected-color: colors.$queen-blue;
     border-bottom-style: solid;
     border-bottom-width: $bottom-border-width;
 
-    &.is-active {
-
+    &.isActive {
+      border-bottom-color: red;
     }
 
     &:hover {
