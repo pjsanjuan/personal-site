@@ -33,6 +33,10 @@ const ProjectCard = ({
         </div>
 
         <div className={projectStyles.footer}>
+          <span className={`${projectStyles.technologies} code`}>
+            {technologies ? technologies.join(", ") : null}
+          </span>
+
           <div className={projectStyles.externalLinks}>
             {
               // Render the github icon if the githubLink prop exists
@@ -52,10 +56,6 @@ const ProjectCard = ({
               ) : null
             }
           </div>
-
-          <span className={`${projectStyles.technologies} code`}>
-            {technologies ? technologies.join(", ") : null}
-          </span>
         </div>
       </div>
     </div>

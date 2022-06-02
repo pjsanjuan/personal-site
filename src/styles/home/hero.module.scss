@@ -1,4 +1,14 @@
-@use '../../styles/colors';
+@use "../../styles/colors";
+@import "../media-queries.scss";
+
+.main {
+  display: flex;
+  margin: 0 auto;
+
+  @include for-phone-only {
+    display: block;
+  }  
+}
 
 .wrapper {
   display: flex;
@@ -10,7 +20,7 @@
 }
 
 .imageWrapper {
-  padding: 0 30px;
+  padding: 20px 30px;
   flex: 0 0 43%;
 
   display: flex;
@@ -30,11 +40,6 @@
   justify-content: center;
 }
 
-.main {
-  display: flex;
-  margin: 0 auto;
-}
-
 .recentSkills {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
@@ -42,7 +47,7 @@
   padding: 0px;
   list-style: none;
   margin-left: 0px;
-  
+
   li {
     position: relative;
     padding-left: 20px;

@@ -17,10 +17,10 @@ const HeroHome = () => (
         <p className="code">Hi, my name is</p>
         <h1>Patrick San Juan</h1>
         <p>
-          I like learning new technologies through projects. I'm{" "}
+          I like learning new technologies through projects. I'm
           <b>primarily a back end developer</b>, but I'm learning front-end web
           technologies to <b>expand my skills</b>. Currently, I'm focused on
-          developing software at <b>FORM</b>.
+          developing software at <b>Hootsuite</b>.
         </p>
         <p>Lately, I've been working the with following technologies:</p>
         <ul className={heroStyles.recentSkills}>

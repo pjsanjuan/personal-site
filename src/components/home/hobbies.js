@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Hobby from "./hobby"
+import * as hobbyStyles from "../../styles/home/hobbies.module.scss"
 
 const hobbiesQuery = graphql`
   query {
@@ -23,7 +24,7 @@ const Hobbies = ({ style }) => {
   return (
     <section style={style} id="hobbies">
       <h1 className="code">03. Hobbies</h1>
-      <div>
+      <div className={hobbyStyles.main}>
         {allMdx.nodes.map(node => (
           <Hobby
             key={node.frontmatter.title}

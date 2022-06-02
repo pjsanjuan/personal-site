@@ -8,7 +8,7 @@ const workExperienceQuery = graphql`
   query {
     allMdx(
       filter: { fileAbsolutePath: { regex: "/work-experience/" } }
-      sort: { order: DESC, fields: frontmatter___startDate }
+      sort: { order: ASC, fields: frontmatter___startDate }
     ) {
       nodes {
         id
@@ -29,7 +29,9 @@ const workExperienceQuery = graphql`
 const WorkExperienceTabs = ({ style }) => {
   const { allMdx } = useStaticQuery(workExperienceQuery)
 
-  const [activeNode, setActiveNode] = useState(allMdx.nodes[0])
+  const [activeNode, setActiveNode] = useState(
+    allMdx.nodes[allMdx.nodes.length - 1]
+  )
 
   const selectedTabClass = currentNode => {
     return currentNode.frontmatter.position === activeNode.frontmatter.position
