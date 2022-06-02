@@ -1,7 +1,5 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-// import * as cardStyles from "../../styles/home/work-experience-tab.module.scss"
-
 // MUI imports
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';

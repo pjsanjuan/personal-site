@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import ProjectCard from "./project-card"
+import Grid from '@mui/material/Grid';
 
 const projectsQuery = graphql`
   query {
@@ -32,20 +33,21 @@ const ProjectsHome = ({ style }) => {
     <section style={style} id="projects">
       <h1 className="code">02. Projects</h1>
 
-      <div>
+      <Grid container spacing={2}>
         {allMdx.nodes.map(node => (
-          <ProjectCard
-            key={node.frontmatter.title}
-            title={node.frontmatter.title}
-            mdxBody={node.body}
-            githubLink={node.frontmatter.githubLink}
-            youtubeLink={node.frontmatter.youtubeLink}
-            gatsbyImageData={node.frontmatter.thumbnailImage}
-            technologies={node.frontmatter.technologies}
-            style={{ marginBottom: "20px" }}
-          />
+          <Grid item xs={12} sm={6}>
+            <ProjectCard
+              key={node.frontmatter.title}
+              title={node.frontmatter.title}
+              mdxBody={node.body}
+              githubLink={node.frontmatter.githubLink}
+              youtubeLink={node.frontmatter.youtubeLink}
+              gatsbyImageData={node.frontmatter.thumbnailImage}
+              technologies={node.frontmatter.technologies}
+            />
+          </Grid>
         ))}
-      </div>
+      </Grid>
     </section>
   )
 }

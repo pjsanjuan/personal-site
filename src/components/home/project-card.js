@@ -9,6 +9,14 @@ import {
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
+// MUI components
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import CardMedia from '@mui/material/CardMedia'
+
 const ProjectCard = ({
   title,
   mdxBody,
@@ -16,23 +24,27 @@ const ProjectCard = ({
   technologies,
   githubLink,
   youtubeLink,
-  style,
 }) => {
   const image = getImage(gatsbyImageData)
 
   return (
-    <div className={projectStyles.wrapper} style={style}>
-      <div className={projectStyles.imageWrapper}>
-        <GatsbyImage image={image} alt="Project image" />
-      </div>
+    <Container>
+      <Card variant="outlined">
+        {/* Header Image */}
+        <CardMedia>
+          <GatsbyImage image={image} alt="Project image" />
+        </CardMedia>
 
-      <div className={projectStyles.contentWrapper}>
-        <div>
-          <h2 className="code">{title}</h2>
-          {<MDXRenderer>{mdxBody}</MDXRenderer>}
-        </div>
+        {/* Content */}
+        <CardContent>
+          <Typography>
+            <h2>{title}</h2>
+            {<MDXRenderer>{mdxBody}</MDXRenderer>}
+          </Typography>
+        </CardContent>
 
-        <div className={projectStyles.footer}>
+        {/* Footer */}
+        <CardActions>
           <span className={`${projectStyles.technologies} code`}>
             {technologies ? technologies.join(", ") : null}
           </span>
@@ -56,9 +68,9 @@ const ProjectCard = ({
               ) : null
             }
           </div>
-        </div>
-      </div>
-    </div>
+        </CardActions>
+      </Card>
+    </Container>
   )
 }
 

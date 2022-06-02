@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
 import WorkExperienceItem from "./work-experience-item"
-import * as scssStyles from "../../styles/home/work-experience-tabs.module.scss"
+import Stack from '@mui/material/Stack';
 
 const workExperienceQuery = graphql`
   query {
@@ -31,19 +31,20 @@ const WorkExperience = () => {
 
   return (
     <section id="work-experience">
-      <h1>01. Work Experience</h1>
-
-      {allMdx.nodes.map(activeNode => (
-        <WorkExperienceItem
-          key={activeNode.frontmatter.position}
-          position={activeNode.frontmatter.position}
-          company={activeNode.frontmatter.company}
-          location={activeNode.frontmatter.location}
-          startDate={activeNode.frontmatter.startDate}
-          endDate={activeNode.frontmatter.endDate}
-          mdxBody={activeNode.body}
-        />
-      ))}
+      <h1 className="code">01. Work Experience</h1>
+      <Stack spacing={2}>
+        {allMdx.nodes.map(activeNode => (
+          <WorkExperienceItem
+            key={activeNode.frontmatter.position}
+            position={activeNode.frontmatter.position}
+            company={activeNode.frontmatter.company}
+            location={activeNode.frontmatter.location}
+            startDate={activeNode.frontmatter.startDate}
+            endDate={activeNode.frontmatter.endDate}
+            mdxBody={activeNode.body}
+          />
+        ))}
+      </Stack>
     </section>
   )
 }
