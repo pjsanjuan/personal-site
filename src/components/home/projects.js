@@ -25,14 +25,15 @@ const projectsQuery = graphql`
   }
 `
 
-const ProjectsHome = () => {
+const ProjectsHome = ({ style }) => {
   const { allMdx } = useStaticQuery(projectsQuery);
 
   return (
-    <section>
+    <section style={style} id="projects">
       <h1 className="code">
-        01. Projects
+        02. Projects
       </h1>
+
       <div>
       {
         allMdx.nodes.map(node => (
@@ -52,7 +53,5 @@ const ProjectsHome = () => {
     </section>
   )
 }
-
-
 
 export default ProjectsHome

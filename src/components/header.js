@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import * as headerStyles from "../styles/header.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Header = ({ siteTitle }) => (
   <header className={headerStyles.header}>
@@ -15,25 +16,32 @@ const Header = ({ siteTitle }) => (
 
       <div className={headerStyles.tabs}>
         <h2 className={headerStyles.underlineAnimate}>
-          <Link to="">Projects</Link>
+          {/* <Link to="">01. Work Experience</Link> */}
+          <AnchorLink to="#work-experience" title="01. Work Experience" />
         </h2>
 
         <h2 className={headerStyles.underlineAnimate}>
-          <Link to="/resume">Resume</Link>
+          {/* <Link to="">02. Projects</Link> */}
+          <AnchorLink to="#projects" title="02. Projects" />
+        </h2>
+
+        <h2 className={headerStyles.underlineAnimate}>
+          {/* <Link to="">03. Hobbies</Link> */}
+          <AnchorLink to="#hobbies" title="03. Hobbies" />
         </h2>
 
         <h2>
-          <a href="https://github.com/pjsanjuan" target="_blank">
+          <a href="https://github.com/pjsanjuan" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
           </a>
         </h2>
 
         <h2>
-          <a href="https://www.linkedin.com/in/pjsanjuan/" target="_blank">
+          <a href="https://www.linkedin.com/in/pjsanjuan/" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
           </a>
         </h2>
-      </div>
+      </div> 
     </div>
   </header>
 )

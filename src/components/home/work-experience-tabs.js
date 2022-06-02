@@ -36,8 +36,8 @@ const WorkExperienceTabs = ({ style }) => {
   }
 
   return (
-    <section style={style}>
-      <h1 className="code">02. Where I've worked at</h1>
+    <section style={style} id="work-experience">
+      <h1 className="code">01. Work Experience</h1>
       <div className={scssStyles.main}>
         <div className={scssStyles.tabs}>
           <ul>

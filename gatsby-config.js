@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://patricksj.com/`,
   },
   plugins: [
+    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -24,6 +25,14 @@ module.exports = {
       options: {
         name: `projects`,
         path: `${__dirname}/src/content/projects`,
+      },
+    },
+    // Path for all hobbies
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/content/hobbies`,
       },
     },
     // Path for all projects

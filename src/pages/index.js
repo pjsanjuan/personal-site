@@ -11,9 +11,9 @@ const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     <About style={{ minHeight: '100vh' }} />
-    <Projects />
     <WorkExperienceTabs style={{ margin: '200px 0'}}/>
-    <Hobbies />
+    <Projects style={{ margin: '200px 0'}}/>
+    <Hobbies style={{ margin: '200px 0'}}/>
   </Layout>
 )
 

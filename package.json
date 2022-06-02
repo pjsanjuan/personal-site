@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "patricksj-website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A personal static website.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Patrick San Juan",
   "dependencies": {
     "@fontsource/montserrat": "^4.5.1",
     "@fontsource/open-sans": "^4.5.2",
@@ -14,6 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.1.16",
     "babel-plugin-styled-components": "^2.0.2",
     "gatsby": "^4.4.0",
+    "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-fontawesome-css": "^1.2.0",
     "gatsby-plugin-gatsby-cloud": "^4.4.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
