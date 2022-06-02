@@ -1,7 +1,8 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import ProjectCard from "./project-card"
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid"
+import { Typography } from "@mui/material"
 
 const projectsQuery = graphql`
   query {
@@ -31,7 +32,7 @@ const ProjectsHome = ({ style }) => {
 
   return (
     <section style={style} id="projects">
-      <h1 className="code">02. Projects</h1>
+      <Typography gutterBottom variant="h4">02. Projects</Typography>
 
       <Grid container spacing={2}>
         {allMdx.nodes.map(node => (

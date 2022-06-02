@@ -1,9 +1,10 @@
 import * as React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { Typography } from "@mui/material"
 
 const Hobby = ({ title, mdxBody }) => (
   <div>
-    <h2 className="code">{title}</h2>
+    <Typography variant="h6">{title}</Typography>
     {<MDXRenderer>{mdxBody}</MDXRenderer>}
   </div>
 )

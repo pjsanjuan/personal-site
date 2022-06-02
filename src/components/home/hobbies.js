@@ -2,6 +2,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Hobby from "./hobby"
 import * as hobbyStyles from "../../styles/home/hobbies.module.scss"
+import { Typography } from "@mui/material"
 
 const hobbiesQuery = graphql`
   query {
@@ -23,7 +24,7 @@ const Hobbies = ({ style }) => {
 
   return (
     <section style={style} id="hobbies">
-      <h1 className="code">03. Hobbies</h1>
+      <Typography gutterBottom variant="h4">03. Hobbies</Typography>
       <div className={hobbyStyles.main}>
         {allMdx.nodes.map(node => (
           <Hobby

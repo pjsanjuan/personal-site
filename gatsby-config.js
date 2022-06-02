@@ -3,7 +3,7 @@ module.exports = {
     title: `Patrick San Juan`,
     description: `Patrick San Juan's personal site. Showcases projects and up to date resume/cv.`,
     author: `Patrick San Juan`,
-    siteUrl: `https://patricksj.com/`,
+    siteUrl: `https://portfolio.patricksj.com/`,
   },
   plugins: [
     `gatsby-plugin-anchor-links`,
@@ -62,20 +62,5 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-theme-material-ui`,
-      options: {
-        webFontsConfig: {
-          fonts: {
-            google: [
-              {
-                family: `Montserrat`,
-                variants: [`300`, `400`, `500`],
-              },
-            ],
-          },
-        },
-      },
-    },
   ],
 }

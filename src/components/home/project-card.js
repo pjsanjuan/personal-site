@@ -10,12 +10,12 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // MUI components
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import CardMedia from '@mui/material/CardMedia'
+import Card from "@mui/material/Card"
+import CardActions from "@mui/material/CardActions"
+import CardContent from "@mui/material/CardContent"
+import Typography from "@mui/material/Typography"
+import Container from "@mui/material/Container"
+import CardMedia from "@mui/material/CardMedia"
 
 const ProjectCard = ({
   title,
@@ -37,8 +37,10 @@ const ProjectCard = ({
 
         {/* Content */}
         <CardContent>
+          <Typography gutterBottom variant="h5">
+            {title}
+          </Typography>
           <Typography>
-            <h2>{title}</h2>
             {<MDXRenderer>{mdxBody}</MDXRenderer>}
           </Typography>
         </CardContent>

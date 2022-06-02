@@ -1,12 +1,11 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 // MUI imports
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import Accordion from "@mui/material/Accordion"
+import AccordionSummary from "@mui/material/AccordionSummary"
+import AccordionDetails from "@mui/material/AccordionDetails"
+import Typography from "@mui/material/Typography"
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 
 const WorkExperienceItem = ({
   position,
@@ -19,14 +18,13 @@ const WorkExperienceItem = ({
   <Accordion>
     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
       <Typography>
-        <h4>{position} at {company}</h4>
-        <h5>{location}, <span>{startDate}</span> - <span>{endDate ? endDate : "Present"}</span></h5> 
+        {position} at {company}
+        {location}, <span>{startDate}</span> -{" "}
+        <span>{endDate ? endDate : "Present"}</span>
       </Typography>
     </AccordionSummary>
     <AccordionDetails>
-      <Typography>
-        {<MDXRenderer>{mdxBody}</MDXRenderer>}
-      </Typography>
+      <Typography>{<MDXRenderer>{mdxBody}</MDXRenderer>}</Typography>
     </AccordionDetails>
   </Accordion>
 )
