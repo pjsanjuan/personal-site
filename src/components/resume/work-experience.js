@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
-import WorkExperienceCard from './work-experience-card'
+import WorkExperienceCard from "./work-experience-card"
 
 const workExperienceQuery = graphql`
   query {
     allMdx(
-      filter: {fileAbsolutePath: {regex: "/work-experience/"}}
-      sort: {order: DESC, fields: frontmatter___startDate}
+      filter: { fileAbsolutePath: { regex: "/work-experience/" } }
+      sort: { order: DESC, fields: frontmatter___startDate }
     ) {
       nodes {
         id
@@ -25,28 +25,25 @@ const workExperienceQuery = graphql`
   }
 `
 
-
 const WorkExperience = ({ style }) => {
-  const { allMdx } = useStaticQuery(workExperienceQuery);
+  const { allMdx } = useStaticQuery(workExperienceQuery)
 
   return (
     <section style={style}>
       <h1>Work Experience</h1>
       <div>
-        {
-          allMdx.nodes.map(node => (
-            <WorkExperienceCard
-              key={node.frontmatter.position}
-              position={node.frontmatter.position}
-              company={node.frontmatter.company}
-              location={node.frontmatter.location}
-              startDate={node.frontmatter.startDate}
-              endDate={node.frontmatter.endDate}
-              mdxBody={node.body}
-              style={{ marginBottom: "60px" }}
-            />
-          ))
-        }
+        {allMdx.nodes.map(node => (
+          <WorkExperienceCard
+            key={node.frontmatter.position}
+            position={node.frontmatter.position}
+            company={node.frontmatter.company}
+            location={node.frontmatter.location}
+            startDate={node.frontmatter.startDate}
+            endDate={node.frontmatter.endDate}
+            mdxBody={node.body}
+            style={{ marginBottom: "60px" }}
+          />
+        ))}
       </div>
     </section>
   )

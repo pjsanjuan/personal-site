@@ -10,8 +10,7 @@ const Header = ({ siteTitle }) => (
   <header className={headerStyles.header}>
     <div className={headerStyles.wrapper}>
       <h1>
-        <Link to="/">{siteTitle}
-        </Link>
+        <Link to="/">{siteTitle}</Link>
       </h1>
 
       <div className={headerStyles.tabs}>
@@ -31,17 +30,25 @@ const Header = ({ siteTitle }) => (
         </h2>
 
         <h2>
-          <a href="https://github.com/pjsanjuan" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/pjsanjuan"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
           </a>
         </h2>
 
         <h2>
-          <a href="https://www.linkedin.com/in/pjsanjuan/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/pjsanjuan/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
           </a>
         </h2>
-      </div> 
+      </div>
     </div>
   </header>
 )

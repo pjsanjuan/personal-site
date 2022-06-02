@@ -1,7 +1,6 @@
 import * as React from "react"
 import * as heroStyles from "../../styles/home/hero.module.scss"
 
-
 const Skills = () => (
   <section className={heroStyles.wrapper}>
     <h1>Skills, Technologies and Languages</h1>

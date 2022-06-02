@@ -4,7 +4,7 @@ import ProjectCard from "./project-card"
 
 const projectsQuery = graphql`
   query {
-    allMdx(filter: {fileAbsolutePath: {regex: "/content\/projects/"}}) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/content/projects/" } }) {
       nodes {
         id
         body
@@ -26,17 +26,14 @@ const projectsQuery = graphql`
 `
 
 const ProjectsHome = ({ style }) => {
-  const { allMdx } = useStaticQuery(projectsQuery);
+  const { allMdx } = useStaticQuery(projectsQuery)
 
   return (
     <section style={style} id="projects">
-      <h1 className="code">
-        02. Projects
-      </h1>
+      <h1 className="code">02. Projects</h1>
 
       <div>
-      {
-        allMdx.nodes.map(node => (
+        {allMdx.nodes.map(node => (
           <ProjectCard
             key={node.frontmatter.title}
             title={node.frontmatter.title}
@@ -47,8 +44,7 @@ const ProjectsHome = ({ style }) => {
             technologies={node.frontmatter.technologies}
             style={{ marginBottom: "20px" }}
           />
-        ))
-      }
+        ))}
       </div>
     </section>
   )

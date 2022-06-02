@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
-import WorkExperienceTab from './work-experience-tab'
+import WorkExperienceTab from "./work-experience-tab"
 import * as scssStyles from "../../styles/home/work-experience-tabs.module.scss"
 
 const workExperienceQuery = graphql`
   query {
     allMdx(
-      filter: {fileAbsolutePath: {regex: "/work-experience/"}}
-      sort: {order: DESC, fields: frontmatter___startDate}
+      filter: { fileAbsolutePath: { regex: "/work-experience/" } }
+      sort: { order: DESC, fields: frontmatter___startDate }
     ) {
       nodes {
         id
@@ -27,12 +27,14 @@ const workExperienceQuery = graphql`
 `
 
 const WorkExperienceTabs = ({ style }) => {
-  const { allMdx } = useStaticQuery(workExperienceQuery);
+  const { allMdx } = useStaticQuery(workExperienceQuery)
 
-  const [activeNode, setActiveNode] = useState(allMdx.nodes[0]);
+  const [activeNode, setActiveNode] = useState(allMdx.nodes[0])
 
-  const selectedTabClass = (currentNode) => {
-    return currentNode.frontmatter.position === activeNode.frontmatter.position ? scssStyles.isActive : null
+  const selectedTabClass = currentNode => {
+    return currentNode.frontmatter.position === activeNode.frontmatter.position
+      ? scssStyles.isActive
+      : null
   }
 
   return (
@@ -41,15 +43,16 @@ const WorkExperienceTabs = ({ style }) => {
       <div className={scssStyles.main}>
         <div className={scssStyles.tabs}>
           <ul>
-            {
-              allMdx.nodes.map((node) => (
-                <li key={node.frontmatter.position}>
-                  <button onClick={() => setActiveNode(node)} className={selectedTabClass(node)}>
-                    {node.frontmatter.position}
-                  </button>
-                </li>
-              ))
-            }
+            {allMdx.nodes.map(node => (
+              <li key={node.frontmatter.position}>
+                <button
+                  onClick={() => setActiveNode(node)}
+                  className={selectedTabClass(node)}
+                >
+                  {node.frontmatter.position}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
         <div className={scssStyles.tabContent}>

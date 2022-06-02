@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import PropTypes from "prop-types"
 
 const SkillCard = ({ gatsbyImageData, skillName }) => {
@@ -6,9 +6,7 @@ const SkillCard = ({ gatsbyImageData, skillName }) => {
 
   return (
     <div className="skillCard">
-      <GatsbyImage
-        image={image}
-      />
+      <GatsbyImage image={image} />
       <h3>{skillName}</h3>
     </div>
   )
@@ -25,4 +23,3 @@ SkillCard.propTypes = {
 }
 
 export default SkillCard
- 

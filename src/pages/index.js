@@ -10,10 +10,10 @@ import WorkExperienceTabs from "../components/home/work-experience-tabs"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <About style={{ minHeight: '100vh' }} />
-    <WorkExperienceTabs style={{ margin: '200px 0'}}/>
-    <Projects style={{ margin: '200px 0'}}/>
-    <Hobbies style={{ margin: '200px 0'}}/>
+    <About style={{ minHeight: "100vh" }} />
+    <WorkExperienceTabs style={{ margin: "200px 0" }} />
+    <Projects style={{ margin: "200px 0" }} />
+    <Hobbies style={{ margin: "200px 0" }} />
   </Layout>
 )
 
