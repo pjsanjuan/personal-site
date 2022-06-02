@@ -5,7 +5,7 @@ import Seo from "../components/seo"
 import About from "../components/home/hero"
 import Projects from "../components/home/projects"
 import Hobbies from "../components/home/hobbies"
-import WorkExperienceTabs from "../components/home/work-experience-tabs"
+import WorkExperienceTabs from "../components/home/work-experience"
 
 const IndexPage = () => (
   <Layout>
