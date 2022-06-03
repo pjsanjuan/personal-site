@@ -40,9 +40,7 @@ const ProjectCard = ({
           <Typography gutterBottom variant="h5">
             {title}
           </Typography>
-          <Typography>
-            {<MDXRenderer>{mdxBody}</MDXRenderer>}
-          </Typography>
+          <Typography>{<MDXRenderer>{mdxBody}</MDXRenderer>}</Typography>
         </CardContent>
 
         {/* Footer */}

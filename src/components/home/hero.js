@@ -1,21 +1,27 @@
 import * as React from "react"
-import * as heroStyles from "../../styles/home/hero.module.scss"
 import { StaticImage } from "gatsby-plugin-image"
-import { Typography } from "@mui/material"
+import { Typography, Grid } from "@mui/material"
 
-const HeroHome = () => (
-  <section className={heroStyles.wrapper}>
-    <div className={heroStyles.main}>
-      <div className={heroStyles.imageWrapper}>
+const HeroHome = ({ className }) => (
+  <section className={className} id="hero-home">
+    <Grid
+      container
+      fixed
+      spacing={4}
+      sx={{ minHeight: "100vh", alignItems: "center" }}
+    >
+      {/* Profile picture */}
+      <Grid item xs={12} sm={5}>
         <StaticImage
           src="../../images/headshot.jpg"
           alt="Profile picture"
           imgStyle={{ borderRadius: "100%" }}
         />
-      </div>
+      </Grid>
 
-      <div className={heroStyles.aboutWrapper}>
-        <p className="code">Hi, my name is</p>
+      {/* About */}
+      <Grid item xs={12} sm={6}>
+        <Typography>Hi, my name is</Typography>
         <Typography variant="h4">Patrick San Juan</Typography>
         <Typography>
           <p>
@@ -24,18 +30,9 @@ const HeroHome = () => (
             web technologies to <b>expand my skills</b>. Currently, I'm focused
             on developing software at <b>Hootsuite</b>.
           </p>
-          <p>Lately, I've been working the with following technologies:</p>
-          <ul className={heroStyles.recentSkills}>
-            <li>NodeJs</li>
-            <li>JavaScript/TypeScript</li>
-            <li>SQL</li>
-            <li>AWS</li>
-            <li>React</li>
-            <li>Vue</li>
-          </ul>
         </Typography>
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   </section>
 )
 

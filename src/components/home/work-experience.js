@@ -27,11 +27,11 @@ const workExperienceQuery = graphql`
   }
 `
 
-const WorkExperience = () => {
+const WorkExperience = ({ className }) => {
   const { allMdx } = useStaticQuery(workExperienceQuery)
 
   return (
-    <section id="work-experience">
+    <section className={className} id="work-experience">
       <Typography gutterBottom variant="h4">01. Work Experience</Typography>
       <Stack spacing={2}>
         {allMdx.nodes.map(activeNode => (

@@ -27,12 +27,14 @@ const projectsQuery = graphql`
   }
 `
 
-const ProjectsHome = ({ style }) => {
+const ProjectsHome = ({ className }) => {
   const { allMdx } = useStaticQuery(projectsQuery)
 
   return (
-    <section style={style} id="projects">
-      <Typography gutterBottom variant="h4">02. Projects</Typography>
+    <section className={className} id="projects">
+      <Typography gutterBottom variant="h4">
+        02. Projects
+      </Typography>
 
       <Grid container spacing={2}>
         {allMdx.nodes.map(node => (
