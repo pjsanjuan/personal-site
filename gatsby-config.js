@@ -35,12 +35,20 @@ module.exports = {
         path: `${__dirname}/src/content/hobbies`,
       },
     },
-    // Path for all projects
+    // Path for all resume info
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `resume`,
         path: `${__dirname}/src/content/resume`,
+      },
+    },
+    // Path for all hero content
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `hero`,
+        path: `${__dirname}/src/content/hero`,
       },
     },
     `gatsby-transformer-sharp`,
