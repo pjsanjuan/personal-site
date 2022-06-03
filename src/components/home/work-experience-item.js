@@ -6,6 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary"
 import AccordionDetails from "@mui/material/AccordionDetails"
 import Typography from "@mui/material/Typography"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
+import { Stack, Divider } from "@mui/material"
 
 const WorkExperienceItem = ({
   position,
@@ -17,11 +18,24 @@ const WorkExperienceItem = ({
 }) => (
   <Accordion>
     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-      <Typography>
-        {position} at {company}
-        {location}, <span>{startDate}</span> -{" "}
-        <span>{endDate ? endDate : "Present"}</span>
-      </Typography>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        divider={<Divider orientation="vertical" flexItem />}
+        spacing={1}
+        width="100%"
+      >
+        <Typography>
+          {position} at {company}
+        </Typography>
+        <Typography>
+          {location}
+        </Typography>
+        <Typography>
+          <span>{startDate}</span> -{" "}
+          <span>{endDate ? endDate : "Present"}</span>
+        </Typography>
+      </Stack>
     </AccordionSummary>
     <AccordionDetails>
       <Typography>{<MDXRenderer>{mdxBody}</MDXRenderer>}</Typography>
