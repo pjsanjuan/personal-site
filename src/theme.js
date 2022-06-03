@@ -1,5 +1,7 @@
 import { createTheme } from "@mui/material"
 
+const codeFonts = '"Source Code Pro", "Helvetica", "Arial", sans-serif'
+
 const theme = createTheme({
   palette: {
     mode: "light",
@@ -7,22 +9,22 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Open Sans", "Montserrat", sans-serif',
     h1: {
-      fontFamily: '"Source Code Pro", "Helvetica", "Arial", sans-serif',
+      fontFamily: codeFonts,
     },
     h2: {
-      fontFamily: '"Source Code Pro", "Helvetica", "Arial", sans-serif',
+      fontFamily: codeFonts,
     },
     h3: {
-      fontFamily: '"Source Code Pro", "Helvetica", "Arial", sans-serif',
+      fontFamily: codeFonts,
     },
     h4: {
-      fontFamily: '"Source Code Pro", "Helvetica", "Arial", sans-serif',
+      fontFamily: codeFonts,
     },
     h5: {
-      fontFamily: '"Source Code Pro", "Helvetica", "Arial", sans-serif',
+      fontFamily: codeFonts,
     },
     h6: {
-      fontFamily: '"Source Code Pro", "Helvetica", "Arial", sans-serif',
+      fontFamily: codeFonts,
     },
   },
 })

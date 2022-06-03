@@ -38,6 +38,14 @@ const Header = ({ siteTitle }) => (
         alignItems="center"
         divider={<Divider orientation="vertical" flexItem />}
         spacing={2}
+        sx={{
+          display: {
+            xxs: "none",
+            xs: "none",
+            sm: "none",
+            md: "flex",
+          }
+        }}
       >
         <Link variant="h6" href="/#work-experience" underline="none">Experience</Link>
 
