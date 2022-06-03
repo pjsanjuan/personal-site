@@ -1,5 +1,4 @@
 import * as React from "react"
-import * as projectStyles from "../../styles/home/project-card.module.scss"
 import PropTypes from "prop-types"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -41,11 +40,11 @@ const ProjectCard = ({
 
         {/* Footer */}
         <CardActions>
-          <span className={`${projectStyles.technologies} code`}>
+          <Typography>
             {technologies ? technologies.join(", ") : null}
-          </span>
+          </Typography>
 
-          <div className={projectStyles.externalLinks}>
+          <Typography>
             {
               // Render the github icon if the githubLink prop exists
               githubLink ? (
@@ -63,7 +62,7 @@ const ProjectCard = ({
                 </a>
               ) : null
             }
-          </div>
+          </Typography>
         </CardActions>
       </Card>
     </Container>

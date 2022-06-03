@@ -1,55 +1,75 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import * as headerStyles from "../styles/header.module.scss"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { GitHub, LinkedIn } from "@mui/icons-material"
+import Typography from "@mui/material/Typography"
+import { Stack, Divider, Container } from "@mui/material"
+import { styled } from '@mui/system';
+import Link from '@mui/material/Link'
+
+const CustomStyledHeader = styled('header')({
+  display: 'flex',
+  backgroundColor: "#161925",
+  textAlign: "center",
+  padding: "20px 0",
+  "a:visited": {
+    color: "white",
+    textDecoration: "none",
+  }
+})
 
 const Header = ({ siteTitle }) => (
-  <header className={headerStyles.header}>
-    <div className={headerStyles.wrapper}>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
+  <CustomStyledHeader>
+    <Container
+      fixed
+      maxWidth="md"
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around"
+      }}
+    >
+      <Typography variant="h6" style={{ color: 'white' }}>
+        {siteTitle}
+      </Typography>
 
-      <div className={headerStyles.tabs}>
-        <h2 className={headerStyles.underlineAnimate}>
-          {/* <Link to="">01. Work Experience</Link> */}
-          <AnchorLink to="#work-experience" title="01. Work Experience" />
-        </h2>
+      <Stack
+        direction="row"
+        alignItems="center"
+        divider={<Divider orientation="vertical" flexItem />}
+        spacing={2}
+      >
+        <Link variant="h6" href="/#work-experience" underline="none">Experience</Link>
 
-        <h2 className={headerStyles.underlineAnimate}>
-          {/* <Link to="">02. Projects</Link> */}
-          <AnchorLink to="#projects" title="02. Projects" />
-        </h2>
+        <Link variant="h6" href="/#projects" underline="none">Projects</Link>
 
-        <h2 className={headerStyles.underlineAnimate}>
-          {/* <Link to="">03. Hobbies</Link> */}
-          <AnchorLink to="#hobbies" title="03. Hobbies" />
-        </h2>
+        <Link variant="h6" href="/#hobbies" underline="none">Hobbies</Link>
+      </Stack>
 
-        <h2>
-          <a
-            href="https://github.com/pjsanjuan"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GitHub/>
-          </a>
-        </h2>
+      <Stack
+        direction="row"
+        alignItems="center"
+        divider={<Divider orientation="vertical" flexItem />}
+        spacing={1}
+      >
+        <Link
+          href="https://github.com/pjsanjuan"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <GitHub />
+        </Link>
 
-        <h2>
-          <a
-            href="https://www.linkedin.com/in/pjsanjuan/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LinkedIn />
-          </a>
-        </h2>
-      </div>
-    </div>
-  </header>
+        <Link
+          href="https://www.linkedin.com/in/pjsanjuan/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <LinkedIn />
+        </Link>
+      </Stack>
+    </Container>
+  </CustomStyledHeader>
 )
 
 Header.propTypes = {
