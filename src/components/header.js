@@ -2,9 +2,8 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import * as headerStyles from "../styles/header.module.scss"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { GitHub, LinkedIn } from "@mui/icons-material"
 
 const Header = ({ siteTitle }) => (
   <header className={headerStyles.header}>
@@ -35,7 +34,7 @@ const Header = ({ siteTitle }) => (
             target="_blank"
             rel="noreferrer"
           >
-            <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+            <GitHub/>
           </a>
         </h2>
 
@@ -45,7 +44,7 @@ const Header = ({ siteTitle }) => (
             target="_blank"
             rel="noreferrer"
           >
-            <FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
+            <LinkedIn />
           </a>
         </h2>
       </div>

@@ -1,13 +1,9 @@
 import * as React from "react"
 import * as projectStyles from "../../styles/home/project-card.module.scss"
 import PropTypes from "prop-types"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faGithubSquare,
-  faYoutubeSquare,
-} from "@fortawesome/free-brands-svg-icons"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GitHub, YouTube } from "@mui/icons-material"
 
 // MUI components
 import Card from "@mui/material/Card"
@@ -54,7 +50,7 @@ const ProjectCard = ({
               // Render the github icon if the githubLink prop exists
               githubLink ? (
                 <a href={githubLink} target="_blank" rel="noreferrer">
-                  <FontAwesomeIcon icon={faGithubSquare} />
+                  <GitHub/>
                 </a>
               ) : null
             }
@@ -63,7 +59,7 @@ const ProjectCard = ({
               // Render the github icon if the githubLink prop exists
               youtubeLink ? (
                 <a href={youtubeLink} target="_blank" rel="noreferrer">
-                  <FontAwesomeIcon icon={faYoutubeSquare} />
+                  <YouTube />
                 </a>
               ) : null
             }
