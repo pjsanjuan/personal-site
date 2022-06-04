@@ -1,10 +1,10 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { GitHub, LinkedIn } from "@mui/icons-material"
-import Typography from "@mui/material/Typography"
 import { Stack, Divider, Container } from "@mui/material"
 import { styled } from '@mui/system';
 import Link from '@mui/material/Link'
+import { StaticImage } from "gatsby-plugin-image"
 
 const CustomStyledHeader = styled('header')({
   display: 'flex',
@@ -29,9 +29,11 @@ const Header = ({ siteTitle }) => (
         justifyContent: "space-around"
       }}
     >
-      <Typography variant="h6" style={{ color: 'white' }}>
-        {siteTitle}
-      </Typography>
+      <StaticImage
+        src="../images/favicon.png"
+        alt="PSJ"
+        style={{ maxWidth: "100px" }}
+      />
 
       <Stack
         direction="row"
