@@ -4,6 +4,13 @@ import { useStaticQuery, graphql } from "gatsby"
 import WorkExperienceItem from "./work-experience-item"
 import Stack from "@mui/material/Stack"
 import { Typography } from "@mui/material"
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component"
+import WorkIcon from "@mui/icons-material/Work"
+import "react-vertical-timeline-component/style.min.css"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const workExperienceQuery = graphql`
   query {
@@ -29,23 +36,41 @@ const workExperienceQuery = graphql`
 
 const WorkExperience = ({ className }) => {
   const { allMdx } = useStaticQuery(workExperienceQuery)
+  const allNodes = allMdx.nodes
 
   return (
     <section className={className} id="work-experience">
-      <Typography gutterBottom variant="h4">01. Work Experience</Typography>
-      <Stack spacing={2}>
-        {allMdx.nodes.map(activeNode => (
-          <WorkExperienceItem
-            key={activeNode.frontmatter.position}
-            position={activeNode.frontmatter.position}
-            company={activeNode.frontmatter.company}
-            location={activeNode.frontmatter.location}
-            startDate={activeNode.frontmatter.startDate}
-            endDate={activeNode.frontmatter.endDate}
-            mdxBody={activeNode.body}
-          />
+      {/* TODO: Wrap the VerticalTimeline component into it's own */}
+      <Typography gutterBottom variant="h4">
+        01. Work Experience
+      </Typography>
+
+      <VerticalTimeline>
+        {allNodes.map(activeNode => (
+          <VerticalTimelineElement
+            key={activeNode.id}
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+            // date="2011 - present"
+            date={`${activeNode.frontmatter.startDate} to ${activeNode.frontmatter.endDate}`}
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            icon={<WorkIcon />}
+            style={{ width: "100%" }}
+          >
+            <Typography variant="h6">
+              {activeNode.frontmatter.position}
+            </Typography>
+            <Typography variant="h6">
+              <i>{activeNode.frontmatter.company}</i>
+            </Typography>
+
+            <Typography>
+              {<MDXRenderer>{activeNode.body}</MDXRenderer>}
+            </Typography>
+          </VerticalTimelineElement>
         ))}
-      </Stack>
+      </VerticalTimeline>
     </section>
   )
 }

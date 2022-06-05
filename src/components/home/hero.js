@@ -6,11 +6,9 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const query = graphql`
   query {
-    mdx(
-      fileAbsolutePath: {regex: "/content/hero/"}
-    ) {
-     id
-     body
+    mdx(fileAbsolutePath: { regex: "/content/hero/" }) {
+      id
+      body
     }
   }
 `
@@ -22,7 +20,7 @@ const HeroHome = ({ className }) => {
     <section className={className} id="hero-home">
       <Grid
         container
-        fixed
+        fixed={true}
         spacing={4}
         sx={{ minHeight: "100vh", alignItems: "center" }}
       >
@@ -37,7 +35,7 @@ const HeroHome = ({ className }) => {
 
         {/* About */}
         <Grid item xs={12} sm={6}>
-         <MDXRenderer>{mdx.body}</MDXRenderer>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
         </Grid>
       </Grid>
     </section>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { GitHub, YouTube } from "@mui/icons-material"
-import Link from '@mui/material/Link'
+import Link from "@mui/material/Link"
 
 // MUI components
 import Card from "@mui/material/Card"
@@ -42,7 +42,13 @@ const ProjectCard = ({
 
         {/* Footer */}
         <CardActions>
-          <Stack spacing={2} direction="row" justifyContent="space-between" style={{ width: "100%" }} t>
+          <Stack
+            spacing={2}
+            direction="row"
+            justifyContent="space-between"
+            style={{ width: "100%" }}
+            t
+          >
             <Typography variant="subtitle1">
               {technologies ? technologies.join(", ") : null}
             </Typography>

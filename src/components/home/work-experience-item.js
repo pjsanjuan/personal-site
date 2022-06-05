@@ -28,9 +28,7 @@ const WorkExperienceItem = ({
         <Typography>
           {position} at {company}
         </Typography>
-        <Typography>
-          {location}
-        </Typography>
+        <Typography>{location}</Typography>
         <Typography>
           <span>{startDate}</span> -{" "}
           <span>{endDate ? endDate : "Present"}</span>
