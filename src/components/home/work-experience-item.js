@@ -45,8 +45,6 @@ const WorkExperienceItem = ({
   const startDateReadable = toHumanReadable(startDate)
   const endDateReadable = endDate ? toHumanReadable(endDate) : 'Present'
 
-  console.log(startDate)
-
   return (
     <VerticalTimelineElement
       key={id}
