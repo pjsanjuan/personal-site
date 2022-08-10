@@ -32,10 +32,20 @@ const WorkExperienceItem = ({
   mdxBody,
 }) => {
   const [expanded, setExpanded] = React.useState(false);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  function toHumanReadable(dateString) {
+    return new Date(dateString).toLocaleDateString('en-US', options)
+  }
+
+  const startDateReadable = toHumanReadable(startDate)
+  const endDateReadable = endDate ? toHumanReadable(endDate) : 'Present'
+
+  console.log(startDate)
 
   return (
     <VerticalTimelineElement
@@ -43,7 +53,7 @@ const WorkExperienceItem = ({
       className="vertical-timeline-element--work"
       contentStyle={{ background: "#8ea8c3", color: "#161925" }}
       contentArrowStyle={{ borderRight: "7px solid  #8ea8c3" }}
-      date={`${startDate} to ${endDate}`}
+      date={`${startDateReadable} to ${endDateReadable}`}
       iconStyle={{ background: "#8ea8c3", color: "#161925" }}
       icon={<WorkIcon />}
       style={{ width: "100%" }}
