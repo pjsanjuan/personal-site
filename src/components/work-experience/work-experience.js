@@ -23,6 +23,7 @@ const workExperienceQuery = graphql`
           location
           startDate
           endDate
+          timelineImage
         }
       }
     }
@@ -50,6 +51,7 @@ const WorkExperience = ({ className }) => {
             startDate={node.frontmatter.startDate}
             endDate={node.frontmatter.endDate}
             mdxBody={node.body}
+            timelineImage={node.frontmatter.timelineImage}
           />
         ))}
       </VerticalTimeline>

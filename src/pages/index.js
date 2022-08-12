@@ -5,7 +5,7 @@ import Seo from "../components/seo"
 import Hero from "../components/home/hero"
 import Projects from "../components/home/projects"
 import Hobbies from "../components/home/hobbies"
-import WorkExperienceTabs from "../components/home/work-experience"
+import WorkExperience from "../components/work-experience/work-experience"
 
 import { Stack, ThemeProvider } from "@mui/material"
 import { CssBaseline } from "@mui/material"
@@ -19,7 +19,7 @@ const IndexPage = () => (
     <Layout>
       <Stack spacing={15}>
         <Hero />
-        <WorkExperienceTabs />
+        <WorkExperience />
         <Projects />
         <Hobbies />
       </Stack>
