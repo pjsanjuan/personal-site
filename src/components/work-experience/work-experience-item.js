@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton'
 import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component"
-import WorkIcon from "@mui/icons-material/Work"
+import TimelineImage from "./timeline-image"
 import Collapse from "@mui/material/Collapse"
 import { styled } from '@mui/material/styles'
 import Stack from "@mui/material/Stack"
@@ -30,6 +30,7 @@ const WorkExperienceItem = ({
   startDate,
   endDate,
   mdxBody,
+  timelineImage,
 }) => {
   const [expanded, setExpanded] = React.useState(false);
   const options = { year: 'numeric', month: 'long', day: 'numeric' }
@@ -53,7 +54,7 @@ const WorkExperienceItem = ({
       contentArrowStyle={{ borderRight: "7px solid  #8ea8c3" }}
       date={`${startDateReadable} to ${endDateReadable}`}
       iconStyle={{ background: "#8ea8c3", color: "#161925" }}
-      icon={<WorkIcon />}
+      icon={<TimelineImage imageName={timelineImage} />}
       style={{ width: "100%" }}
       dateClassName="date-style"
     >

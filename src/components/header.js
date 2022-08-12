@@ -17,7 +17,7 @@ const CustomStyledHeader = styled("header")({
   },
 })
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <CustomStyledHeader>
     <Container
       fixed={true}
