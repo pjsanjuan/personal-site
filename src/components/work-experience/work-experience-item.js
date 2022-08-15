@@ -33,7 +33,7 @@ const WorkExperienceItem = ({
   timelineImage,
 }) => {
   const [expanded, setExpanded] = React.useState(false);
-  const options = { year: 'numeric', month: 'long', day: 'numeric' }
+  const options = { year: 'numeric', month: 'long'}
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
