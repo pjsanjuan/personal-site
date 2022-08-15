@@ -11,7 +11,7 @@ const workExperienceQuery = graphql`
   query {
     allMdx(
       filter: { fileAbsolutePath: { regex: "/work-experience/" } }
-      sort: { order: ASC, fields: frontmatter___startDate }
+      sort: { order: DESC, fields: frontmatter___startDate }
     ) {
       nodes {
         id
@@ -55,6 +55,8 @@ const WorkExperience = ({ className }) => {
           />
         ))}
       </VerticalTimeline>
+
+      {/* TODO: Option to download full resume here */}
     </section>
   )
 }
