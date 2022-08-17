@@ -49,15 +49,15 @@ const Header = () => (
           },
         }}
       >
-        <Link variant="h6" href="/#work-experience" underline="none">
+        <Link variant="h6" href="/#work-experience" underline="none" color={"#fff"}>
           Experience
         </Link>
 
-        <Link variant="h6" href="/#projects" underline="none">
+        <Link variant="h6" href="/#projects" underline="none" color={"#fff"}>
           Projects
         </Link>
 
-        <Link variant="h6" href="/#hobbies" underline="none">
+        <Link variant="h6" href="/#hobbies" underline="none" color={"#fff"}>
           Hobbies
         </Link>
       </Stack>
@@ -72,6 +72,7 @@ const Header = () => (
           href="https://github.com/pjsanjuan"
           target="_blank"
           rel="noreferrer"
+          color={"#fff"}
         >
           <GitHub />
         </Link>
@@ -80,6 +81,7 @@ const Header = () => (
           href="https://www.linkedin.com/in/pjsanjuan/"
           target="_blank"
           rel="noreferrer"
+          color={"#fff"}
         >
           <LinkedIn />
         </Link>
